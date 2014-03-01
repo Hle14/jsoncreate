@@ -1,0 +1,61 @@
+<!-- index.html -->
+<!doctype html>
+
+<!-- ASSIGN OUR ANGULAR MODULE -->
+<html ng-app="goodEatsApi">
+<head>
+	<!-- META -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1"><!-- Optimize mobile viewport -->
+
+	<title>Badge Me, Bro!</title>
+
+	<!-- SCROLLS -->
+	<link rel="stylesheet" href="./stylesheets/bootstrapmin.css"><!-- load bootstrap -->
+	<style>
+		html 					{ overflow-y:scroll; }
+		body 					{ padding-top:50px; }
+		#restaurant-list 				{ margin-bottom:30px; }
+	</style>
+
+	<!-- SPELLS -->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><!-- load jquery -->
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script><!-- load angular -->
+	<script src="core.js"></script>
+
+</head>
+<body ng-controller="mainController" ng-init="initialize()">
+	<div class="container">
+
+		<div class="jumbotron text-center">
+			<h1>HAVE A BADGE</h1>
+		</div>
+
+		<div class="row text-center">
+			<form>
+				<p><input type="text" ng-model="user.name" placeholder="Name"></p>
+				<p><input type="email" ng-model="user.email" placeholder="Email"></p>
+				<p><input type="text" ng-model="user.major" placeholder="Major"></p>
+				<button class="btn btn-lg" ng-model="createBadge(user)">Submit</button>
+			</form>
+		</div>
+<!--
+		<pre>{{user | json}}</pre>
+<!--
+		<div id="restaurant-list" class="row">
+			<div class="col-sm-4 col-sm-offset-4">
+
+				<div class="checkbox" ng-repeat="restaurant in restaurants | filter:search">
+					<label>
+						<input type="checkbox"> {{ restaurant.name }}
+					</label>
+				</div>
+
+			</div>
+		</div>
+-->
+	</div>
+
+</body>
+</html>
+

@@ -1,0 +1,7 @@
+{
+  "name": "Big Bad Badge",
+  "description": "MORE FLAIR",
+  "image": "badge.png",
+  "criteria": "criteria.txt",
+  "issuer": "issuer.json"
+}
