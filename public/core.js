@@ -18,9 +18,12 @@ function mainController($scope, $http) {
 				console.log("Error: " + data);
 			});
 	};
+}
+
+function badgeController($scope, $http) {
 
 	//THIS ENTIRE FUNCTION SHOULD MAYBE BE HANDLED SERVER-SIDE ??
-	$scope.createBadge = function(user){
+	$scope.createBadge = function(){
 		console.log("YAYYY");
 		//generate a unique uid
 		var d = new Date();
@@ -50,6 +53,8 @@ function mainController($scope, $http) {
 		};
 
 		var json_file = host_url;
+
+		/*
 		fs.writeFile(json_file, JSON.stringify(assertion, null, 4), function(err){
 			if(err) {
 				console.log(err);
@@ -57,13 +62,15 @@ function mainController($scope, $http) {
 				console.log("JSON saved to " + json_file);
 			}
 		});
-
-		$http.post('/requestBadge',jsone_file)
+/*/
+		$http.post('http://localhost:1337/requestBadge',assertion)
 			.success(function{
 				console.log("Success: " + json_file);
 			})
 			.error(function{
 				console.log("Error: " + json_file)
 			});
+			//*/
 	};
 }
+

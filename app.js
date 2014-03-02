@@ -150,6 +150,10 @@ app.get('*', function(req, res) {
 	res.sendfile('./public/index.html');
 });
 
+app.post('/requestBadge', function(req,res){
+	console.log("Part 1 successful!");
+});
+
 /*app.get('/api/restaurants/:zip',function(req,res){
 	restaurants.find({ 'zip': req.params.zip });
 });*/

@@ -21,10 +21,13 @@
 	<!-- SPELLS -->
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><!-- load jquery -->
 	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script><!-- load angular -->
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular-resource.min.js"></script>
 	<script src="core.js"></script>
 
 </head>
-<body ng-controller="mainController" ng-init="initialize()">
+<body>
+<div ng-controller="mainController" ng-init="initialize()">
+	{{1 + 2}}
 	<div class="container">
 
 		<div class="jumbotron text-center">
@@ -32,13 +35,15 @@
 		</div>
 
 		<div class="row text-center">
-			<form>
-				<p><input type="text" ng-model="user.name" placeholder="Name"></p>
-				<p><input type="email" ng-model="user.email" placeholder="Email"></p>
-				<p><input type="text" ng-model="user.major" placeholder="Major"></p>
-				<button class="btn btn-lg" ng-model="createBadge(user)">Submit</button>
+			<form ng-controller="badgeController">
+				<p><input ng-model="user.name" placeholder="Name">
+				<p><input ng-model="user.email" placeholder="Email">
+				<p><input ng-model="user.major" placeholder="Major"></p>
+				{{1 + 2}}
+				<p><button class="btn btn-lg" ng-click="createBadge()">Submit</button>
 			</form>
 		</div>
+		{{1 + 2}}
 <!--
 		<pre>{{user | json}}</pre>
 <!--
@@ -55,7 +60,8 @@
 		</div>
 -->
 	</div>
-
+	{{1 + 2}}
+</div>
 </body>
 </html>
 
